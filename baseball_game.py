@@ -284,7 +284,7 @@ def main():
             # 종료 조건
             if strike == 3:
                 break
-        continue_check = input('You win, one more(Y/N) ?')
+        continue_check = input('You win, one more(Y/N)?')
         if is_no(continue_check):
             break
         elif is_yes(continue_check):
