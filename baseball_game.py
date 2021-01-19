@@ -271,16 +271,16 @@ def main():
         random_number = str(get_not_duplicated_three_digit_number())
         print("Random Number is : ", random_number)
         while True:
-            user_input = input('Input guess number: ')
+            user_input = input('Input guess number : ')
             # 사용자 입력 숫자 validation
             while True:
                 if is_validated_number(user_input):
                     break
                 print('Wrong Input, Input again')
-                user_input = input('Input guess number: ')
+                user_input = input('Input guess number : ')
             # Strike ball 계산
             strike, ball = get_strikes_or_ball(user_input, random_number)
-            print('Strikes : {}, Balls : {}'.format(strike, ball))
+            print('Strikes : {} , Balls : {}'.format(strike, ball))
             # 종료 조건
             if strike == 3:
                 break
