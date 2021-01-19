@@ -280,6 +280,8 @@ def main():
                     break
                 print('Wrong Input, Input again')
                 user_input = input('Input guess number : ')
+                if user_input == '0':
+                    break
             # Strike ball 계산
             strike, ball = get_strikes_or_ball(user_input, random_number)
             print('Strikes : {} , Balls : {}'.format(strike, ball))
