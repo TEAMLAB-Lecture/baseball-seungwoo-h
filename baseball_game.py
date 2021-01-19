@@ -288,11 +288,16 @@ def main():
                 break
         if user_input == '0':
             break
-        continue_check = input('You win, one more(Y/N)?')
+        while True:
+            continue_check = input('You win, one more(Y/N)?')
+            if is_no(continue_check) or is_yes(continue_check):
+                break
+            print('Wrong Input, Input again')
         if is_no(continue_check):
             break
-        elif is_yes(continue_check):
+        else:
             continue
+        
     print("Thank you for using this program")
     print("End of the Game")
 
