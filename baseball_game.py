@@ -267,29 +267,28 @@ def is_no(one_more_input):
 
 def main():
     print("Play Baseball")
-    user_input = input('Input guess number: ')
-    random_number = str(get_not_duplicated_three_digit_number())
-    print("Random Number is : ", random_number)
-    # ===Modify codes below=============
-    # 위의 코드를 포함하여 자유로운 수정이 가능함
-
     while True:
-        # 사용자 입력 숫자 validation
+        random_number = str(get_not_duplicated_three_digit_number())
+        print("Random Number is : ", random_number)
         while True:
-            if is_validated_number(user_input):
-                break
-            print('Wrong Input, Input again')
             user_input = input('Input guess number: ')
-        strike, ball = get_strikes_or_ball(user_input, random_number)
-        print('Strikes : {}, Balls : {}'.format(strike, ball))
-        if strike == 3:
-            continue_check = input('You win, one more(Y/N) ?')
-            if is_no(continue_check):
+            # 사용자 입력 숫자 validation
+            while True:
+                if is_validated_number(user_input):
+                    break
+                print('Wrong Input, Input again')
+                user_input = input('Input guess number: ')
+            # Strike ball 계산
+            strike, ball = get_strikes_or_ball(user_input, random_number)
+            print('Strikes : {}, Balls : {}'.format(strike, ball))
+            # 종료 조건
+            if strike == 3:
                 break
-            elif is_yes(continue_check):
-                main()
-        user_input = input('Input guess number: ')
-    # ==================================
+        continue_check = input('You win, one more(Y/N) ?')
+        if is_no(continue_check):
+            break
+        elif is_yes(continue_check):
+            continue
     print("Thank you for using this program")
     print("End of the Game")
 
