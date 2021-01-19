@@ -273,6 +273,8 @@ def main():
         while True:
             user_input = input('Input guess number : ')
             # 사용자 입력 숫자 validation
+            if user_input == '0':
+                break
             while True:
                 if is_validated_number(user_input):
                     break
@@ -284,6 +286,8 @@ def main():
             # 종료 조건
             if strike == 3:
                 break
+        if user_input == '0':
+            break
         continue_check = input('You win, one more(Y/N)?')
         if is_no(continue_check):
             break
